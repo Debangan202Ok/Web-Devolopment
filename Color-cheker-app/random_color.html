@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/ASSETS/CSS/color_picker.css">
+</head>
+<body>
+  <!-- elements are neccesary: nav,div,footer,input,button -->
+  <nav class="responsive">Color-Checker</nav>
+  <main><div class="use">
+    <div class="use_t"></div>
+  </div>
+        <div class="selector">
+          <div class="input">
+            <label for="mode">Select Mode:-</label>
+            <select name="mode" id="mode" onchange='val()'>
+              <option value="col" default>Color</option>
+              <option value="hsl">Hsl</option>
+              <option value="hex">Hex</option>
+              <option value="rgb">rgb</option>
+              <option value="rgba">rgba</option>
+            </select>
+            <label for="text">Enter color code/vale:-</label>
+            <input id="txt" type="text">
+            <input id="button" type="button" value="check">
+          </div>
+          <label for="output">Output:-</label>
+          <div id="out" class="output"></div>
+        </div>
+        <div class="use">
+          <div class="use_t"></div>
+        </div>
+  </main>
+  <footer class="foot"></footer>
+  <script src="/ASSETS/JAVA_SCRIPT/Color.js"></script>
+</body>
+</html>

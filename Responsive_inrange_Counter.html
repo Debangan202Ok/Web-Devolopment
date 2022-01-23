@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .head{
+        width: 40vw;
+        /* height: 10vh; */
+        margin: auto;
+        margin-bottom: 2vh;
+        text-align: center;
+        font-size: 5vw;
+        background-color: #c4c4c4;
+        border: 1px solid;
+      }
+      #display {
+        width: 40vw;
+        /* height: 40vh; */
+        margin: auto;
+        background-color: #c4c4c4;
+        text-align: center;
+        font-size: 10em;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+      }
+      .sec {
+        width: 40vw;
+        height: 10vh;
+        display: flex;
+        background-color: #c4c4c4;
+        margin: auto;
+        margin-top: 2vh;
+      }
+      .btn {
+        font-size: 2em;
+        width: 10vw;
+        margin: auto;
+      }
+      @media screen and (max-width:480px){
+          .head{
+            width: 60vw;
+          }
+          #display{
+            width: 60vw;
+            padding-top: 5vw;
+            padding-bottom: 5vw;
+          }
+          .sec{
+            width: 60vw;
+          }
+          .btn{
+            width: 15vw;
+            font-size: 5vw;
+            padding: 1vw;
+            margin: auto;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">COUNTER</div>
+    <div id="display">0</div>
+    <div class="sec">
+      <input type="button" value="-" name="de-creament" class="btn" />
+      <input type="button" value="Reset" class="btn" />
+      <input type="button" value="+" name="increament" class="btn" />
+    </div>
+    <script>
+      const dis = document.getElementById("display");
+      const btns = document.querySelectorAll(".btn");
+      var count = 0;
+      btns.forEach((btn)=> {
+        btn.addEventListener('click', counter);
+      });
+      function counter(e){
+        while (count<10 && e.currentTarget.value=="+" || count<=10 && count>0 && e.currentTarget.value=="-" || count>0 && e.currentTarget.value=="Reset"){
+              if (e.currentTarget.value=="+"){dis.innerHTML=count+=1;dis.style.color="green";};
+              if (e.currentTarget.value=="-"){dis.innerHTML=count-=1;dis.style.color="red";};
+              if (e.currentTarget.value=="Reset"){count=0;dis.innerHTML=0;};
+              if (count == 0){dis.style.color="";}
+              break;
+          };
+        }; 
+    </script>
+  </body>
+</html>

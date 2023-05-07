@@ -1,0 +1,38 @@
+give me some practise excercise for learn javascript advance
+ChatGPT
+
+Sure, here are some practice exercises to help you learn JavaScript advance:
+
+    Write a function that takes an array of numbers as an argument and returns the sum of all the numbers.
+
+    Write a function that takes a string as an argument and returns the string in reverse order.
+
+    Create a function that takes a string as an argument and returns the number of vowels in the string.
+
+    Write a function that takes an array of objects and returns a new array containing only the objects that have a specific property.
+
+    Write a function that takes an array of numbers as an argument and returns a new array with the numbers sorted in ascending order.
+
+    Create a function that takes a string as an argument and returns a new string with all the vowels removed.
+
+    Write a function that takes two arrays as arguments and returns a new array containing the items that are present in both arrays.
+
+    Create a function that takes a string as an argument and returns a new string with the first letter of each word capitalized.
+
+    Write a function that takes an array of numbers as an argument and returns the average of all the numbers.
+
+    Create a function that takes an array of strings as an argument and returns a new array with the strings sorted in alphabetical order.
+ 
+problem 1
+let arr = [2,3,4,69,5] 
+function sum(...args) {
+    return args.reduce((acc,cur)=>acc+cur,0);
+}
+sum(...arr);
+problem 2
+ler str = "Hello paul";
+function rev(para) {
+    return para.split("").reverse().join("");
+}
+
+console.log(rev);

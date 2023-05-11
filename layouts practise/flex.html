@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Box</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 50vw;
+            height: 100vh;
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: auto;
+            box-shadow: 2px 5px 2px 5px black;
+        }
+        .item {
+            width: 90%;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 5px;
+            box-shadow: 2px 4px 5px black,2px 5px black;
+        }
+        .item:nth-child(2) {
+            background-color: aquamarine;
+            height: 350px;
+            order: 2;
+        }
+        .item:nth-child(1) {
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">TOP</div>
+        <div class="item"></div>
+        <div class="item">LAST</div>
+    </div>
+</body>
+</html>

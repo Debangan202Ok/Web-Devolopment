@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drawing Board</title>
+  <style>
+    #canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <button id="clear">Clear</button>
+  <button id="straight-line">Straight Line</button>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = window.innerWidth-50;
+    canvas.height = window.innerHeight-100;
+    context.strokeStyle = '#111';
+
+    const clearButton = document.getElementById('clear');
+    clearButton.addEventListener('click', () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    const straightLineButton = document.getElementById('straight-line');
+    let isStraightLine = false;
+    let isDrawing = false;
+    let startX, startY;
+
+    straightLineButton.addEventListener('click', () => {
+      isStraightLine = !isStraightLine;
+    });
+
+    canvas.addEventListener('mousedown', start);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stop);
+    canvas.addEventListener('mouseout', stop);
+
+    function start(event) {
+      isDrawing = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      context.beginPath();
+      context.moveTo(startX, startY);
+    }
+
+    function draw(event) {
+      if (!isDrawing) return;
+      
+      context.lineTo(event.clientX, event.clientY);
+
+      if (isStraightLine) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.beginPath();
+        context.moveTo(startX, startY);
+        context.lineTo(event.clientX, event.clientY);
+        context.stroke();
+      } else {
+        context.stroke();
+      }
+    }
+
+    function stop() {
+      isDrawing = false;
+      if (isStraightLine) {
+        context.lineTo(startX, startY);
+        context.stroke();
+      }
+    }
+  </script>
+</body>
+</html>

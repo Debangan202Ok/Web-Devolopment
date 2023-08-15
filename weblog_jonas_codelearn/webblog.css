@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav {
+    float: right;
+    padding-top: 10px;
+}
+
+nav>a {
+    margin: 0 10px;
+}
+
+.head-container>h1 {
+    float: left;
+}
+
+.head-container {
+    border-top: 5px solid #14acac;
+    border-bottom: 5px solid #14acac;
+    padding: 0 auto;
+    background-color: #eeeeee;
+    padding: 5px 20px;
+}
+
+article>header>h2 {
+    margin: 20px 0;
+}
+
+.head-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+h1,
+h2,
+h3 {
+    color: #2ccece;
+}
+
+aside {
+    border-top: 5px solid #2ccece;
+    border-bottom: 5px solid #2ccece;
+    float: right;
+    padding: 0 20px;
+    background-color: #eeeeee;
+    margin: 20px 50px 0 0;
+}
+
+aside>h4 {
+    margin: 10px 0;
+}
+
+article {
+    max-width: 700px;
+    float: left;
+    margin: 0 0 0 20px;
+}
+
+.user-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.user-text {
+    float: right;
+    padding-top: 15px;
+    position: relative;
+}
+.user-text::after {
+    content: "Top";
+    color: red;
+    background-color: yellow;
+    padding: 5xp 10px;
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    right: -25px;
+}
+
+.code-pic {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #14acac;
+    font-weight: bold;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 25px;
+}
+
+article>ol,
+ul {
+    padding: 0 50px;
+}
+li {
+    line-height: 25px;
+    font-weight: bold;
+}
